@@ -1,15 +1,16 @@
 # myapp/views.py
 
 from django.shortcuts import render, redirect
-from django.conf import settings
-from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login 
+from django.conf import settings
 from .forms import RegistroForm
 from .models import RiesgoSiniestralidad
 import json
 import pandas as pd
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
 
 def registro(request):
     if request.method == 'POST':
@@ -46,7 +47,7 @@ def login_view(request):
     return render(request, 'myapp/login.html', {'form': form})
 
 
-#@login_required
+@login_required
 def map_view(request):
     google_maps_api_key = settings.GOOGLE_MAPS_API_KEY
     # Lógica para obtener los datos del mapa (riskData)

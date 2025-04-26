@@ -123,5 +123,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-GOOGLE_MAPS_API_KEY = 'AIzaSyAU9YmUQcfqYYa3-paz2SnZYy03kVTReg0'
+GOOGLE_MAPS_API_KEY = 'AIzaSyALy8T3lBmeICubZlwh8ElPPTa1x5dlHjQ'
 LOGIN_URL = '/map/login/'
