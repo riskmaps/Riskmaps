@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-1jheooi9y5hkz=&@3o5f)(+1fd3o*2l00l8nv0wvwwa+$jvlq@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '1e62-186-81-59-28.ngrok-free.app', 'c624-186-81-59-28.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '31b5-181-237-77-210.ngrok-free.app']
 # Application definition
+CSRF_TRUSTED_ORIGINS = [
+    'https://31b5-181-237-77-210.ngrok-free.app',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -36,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'corsheaders',
     'myapp',
 ]
 LOGIN_REDIRECT_URL = '/'
@@ -49,7 +53,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
+
 
 ROOT_URLCONF = 'mysite.urls'
 

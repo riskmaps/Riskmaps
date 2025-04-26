@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login 
+from django.contrib.auth import login  
 from django.conf import settings
 from .forms import RegistroForm
 from .models import RiesgoSiniestralidad
@@ -19,7 +20,7 @@ def registro(request):
         if form.is_valid():
             user = form.save() # Guarda el nuevo usuario
             # Puedes loguear al usuario aquí si lo deseas
-            auth_login(request, user)  # Iniciar sesión automáticamente después del registro
+            login(request, user) # Iniciar sesión automáticamente después del registro                
             messages.success(request, '¡Registro exitoso!')
             return redirect('map_view')  # Redirige a la página deseada
         else:
@@ -47,7 +48,7 @@ def login_view(request):
     return render(request, 'myapp/login.html', {'form': form})
 
 
-@login_required
+#@login_required
 def map_view(request):
     google_maps_api_key = settings.GOOGLE_MAPS_API_KEY
     # Lógica para obtener los datos del mapa (riskData)
