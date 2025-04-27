@@ -1,0 +1,66 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+Scripts/
+Include/
+Lib/
+site-packages/
+
+# Django specific files
+*.log
+*.pot
+*.sqlite3
+*.db
+local_settings.py
+media/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*.iml
+*.ipr
+*.iws
+
+# Distribution files
+dist/
+build/
+*.egg-info/
+
+# Packages
+# /env/*
+# !/env/lib
+# !/env/Scripts
+# /Lib/*
+# !/Lib/site-packages/
+# /Scripts/*
+
+# python-dotenv
+.env
+
+# Coverage data
+.coverage
+
+# Temporary files
+*~
+# Logs
+*.log
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints
